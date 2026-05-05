@@ -21,6 +21,7 @@ import {
   generateSimpleMessage,
 } from "@/lib/whatsapp";
 
+
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -157,41 +158,7 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-4 border-t border-primary-foreground/10 pt-4">
-                <a
-                  href={`tel:${CONTACT.phone}`}
-                  className="flex items-center gap-3 px-4 py-3 text-primary-foreground/80"
-                >
-                  <Phone className="size-4" />
-                  {CONTACT.phone}
-                </a>
-                <Button
-                  asChild
-                  className="mt-2 w-full bg-[#25d366] text-[#fff] hover:bg-[#20bd5a]"
-                >
-                  <a
-                    href={generateWhatsAppUrl(generateSimpleMessage())}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="size-4" />
-                    Book via WhatsApp
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  className="mt-2 w-full bg-[#7360f2] text-[#fff] hover:bg-[#5f4fd6]"
-                >
-                  <a
-                    href={generateViberUrl(generateSimpleMessage())}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Phone className="size-4" />
-                    Call on Viber
-                  </a>
-                </Button>
-              </div>
+
             </div>
           </SheetContent>
         </Sheet>

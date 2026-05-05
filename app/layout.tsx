@@ -4,6 +4,7 @@ import { Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ContactFAB } from "@/components/contact-fab";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -72,6 +73,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ContactFAB />
         <Analytics />
       </body>
     </html>

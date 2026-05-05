@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRICING } from "@/lib/pricing";
 import { generateWhatsAppUrl, generateBookingMessage } from "@/lib/whatsapp";
+import { useTranslations } from "@/components/language-provider";
 
 interface Suggestion {
   label: string;
@@ -46,6 +47,9 @@ function AddressInput({
   value,
   onChange,
   placeholder,
+  selectHint,
+  clearLabel,
+  locationConfirmedLabel,
 }: {
   id: string;
   label: string;
@@ -53,6 +57,9 @@ function AddressInput({
   value: LocationValue;
   onChange: (val: LocationValue) => void;
   placeholder: string;
+  selectHint: string;
+  clearLabel: string;
+  locationConfirmedLabel: string;
 }) {
   const [query, setQuery] = useState(value.label);
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
@@ -190,14 +197,14 @@ function AddressInput({
             <Loader2 className="size-4 animate-spin text-muted-foreground" />
           )}
           {hasCoords && !loading && (
-            <div className="size-2 rounded-full bg-emerald-500" title="Location confirmed" />
+            <div className="size-2 rounded-full bg-emerald-500" title={locationConfirmedLabel} />
           )}
           {query.length > 0 && !loading && (
             <button
               type="button"
               onClick={handleClear}
               className="rounded-full p-0.5 text-muted-foreground hover:text-foreground"
-              aria-label="Clear"
+              aria-label={clearLabel}
             >
               <X className="size-4" />
             </button>
@@ -236,7 +243,7 @@ function AddressInput({
       </div>
       {!hasCoords && query.length >= 2 && !loading && (
         <p className="text-xs text-muted-foreground">
-          Select a suggestion from the dropdown for accurate results
+          {selectHint}
         </p>
       )}
     </div>
@@ -268,6 +275,7 @@ export function FareCalculatorForm() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<FareResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const t = useTranslations();
 
   async function handleCalculate(e: React.FormEvent) {
     e.preventDefault();
@@ -324,30 +332,35 @@ export function FareCalculatorForm() {
       <Card className="border-0 shadow-lg">
         <CardContent className="p-6 md:p-8">
           <h2 className="font-serif text-2xl font-bold text-card-foreground">
-            Calculate Your Fare
+            {t.fareForm.title}
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Start typing and select your pickup and destination from the
-            suggestions to get an instant price estimate.
+            {t.fareForm.description}
           </p>
 
           <form onSubmit={handleCalculate} className="mt-6 flex flex-col gap-5">
             <AddressInput
               id="from-address"
-              label="Pickup Location"
+              label={t.fareForm.pickupLocation}
               icon={MapPin}
               value={fromLocation}
               onChange={setFromLocation}
-              placeholder="e.g., Thessaloniki Airport"
+              placeholder={t.fareForm.pickupPlaceholder}
+              selectHint={t.fareForm.selectSuggestion}
+              clearLabel={t.fareForm.clear}
+              locationConfirmedLabel={t.fareForm.locationConfirmed}
             />
 
             <AddressInput
               id="to-address"
-              label="Destination"
+              label={t.fareForm.destination}
               icon={Navigation}
               value={toLocation}
               onChange={setToLocation}
-              placeholder="e.g., Aristotelous Square, Thessaloniki"
+              placeholder={t.fareForm.destinationPlaceholder}
+              selectHint={t.fareForm.selectSuggestion}
+              clearLabel={t.fareForm.clear}
+              locationConfirmedLabel={t.fareForm.locationConfirmed}
             />
 
             <Button
@@ -363,10 +376,10 @@ export function FareCalculatorForm() {
               {loading ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
-                  Calculating...
+                  {t.fareForm.calculating}
                 </>
               ) : (
-                "Calculate Fare"
+                t.fareForm.calculateFare
               )}
             </Button>
           </form>
@@ -386,7 +399,7 @@ export function FareCalculatorForm() {
         <Card className="border-0 shadow-lg">
           <CardContent className="p-6 md:p-8">
             <h3 className="font-serif text-xl font-bold text-card-foreground">
-              Your Fare Estimate
+              {t.fareForm.yourFareEstimate}
             </h3>
 
             <div className="mt-6 flex flex-col gap-4">
@@ -395,7 +408,7 @@ export function FareCalculatorForm() {
                 <div className="flex items-start gap-2">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
                   <div>
-                    <p className="text-xs text-muted-foreground">From</p>
+                    <p className="text-xs text-muted-foreground">{t.fareForm.fromLabel}</p>
                     <p className="text-sm font-medium text-card-foreground">
                       {result.from}
                     </p>
@@ -405,7 +418,7 @@ export function FareCalculatorForm() {
                 <div className="flex items-start gap-2">
                   <Navigation className="mt-0.5 size-4 shrink-0 text-accent" />
                   <div>
-                    <p className="text-xs text-muted-foreground">To</p>
+                    <p className="text-xs text-muted-foreground">{t.fareForm.toLabel}</p>
                     <p className="text-sm font-medium text-card-foreground">
                       {result.to}
                     </p>
@@ -420,18 +433,18 @@ export function FareCalculatorForm() {
                   <span className="text-lg font-bold text-card-foreground">
                     {result.distanceKm}
                   </span>
-                  <span className="text-xs text-muted-foreground">km</span>
+                  <span className="text-xs text-muted-foreground">{t.common.km}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1 rounded-xl bg-muted/50 p-4">
                   <Clock className="size-5 text-accent" />
                   <span className="text-lg font-bold text-card-foreground">
                     {result.durationMin}
                   </span>
-                  <span className="text-xs text-muted-foreground">min</span>
+                  <span className="text-xs text-muted-foreground">{t.common.min}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1 rounded-xl bg-accent/10 p-4">
                   <span className="text-xs font-semibold uppercase text-accent">
-                    Fare
+                    {t.fareForm.fare}
                   </span>
                   <span className="text-2xl font-bold text-accent">
                     {result.fareEur.toFixed(0)}
@@ -445,15 +458,14 @@ export function FareCalculatorForm() {
               {/* Price breakdown */}
               <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <div className="flex justify-between">
-                  <span>Base fare</span>
+                  <span>{t.fareCalculatorPage.baseFare}</span>
                   <span>
                     {PRICING.baseFare.toFixed(2)} {result.currency}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span>
-                    {"Distance ("}{result.distanceKm}{" km x "}
-                    {PRICING.perKmRate.toFixed(2)}{")"}
+                    {t.fareForm.distance} ({result.distanceKm} {t.common.km} x {PRICING.perKmRate.toFixed(2)})
                   </span>
                   <span>
                     {(result.distanceKm * PRICING.perKmRate).toFixed(2)}{" "}
@@ -461,7 +473,7 @@ export function FareCalculatorForm() {
                   </span>
                 </div>
                 <div className="flex justify-between border-t border-border pt-2 font-semibold text-card-foreground">
-                  <span>Total estimate</span>
+                  <span>{t.fareForm.totalEstimate}</span>
                   <span>
                     {result.fareEur.toFixed(2)} {result.currency}
                   </span>
@@ -481,7 +493,7 @@ export function FareCalculatorForm() {
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="size-5" />
-                    Book This Trip via WhatsApp
+                    {t.fareForm.bookThisTrip}
                   </a>
                 </Button>
               )}

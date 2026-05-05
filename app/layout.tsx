@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ContactFAB } from "@/components/contact-fab";
+import { LanguageProvider } from "@/components/language-provider";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -70,10 +71,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <ContactFAB />
+        <LanguageProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ContactFAB />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

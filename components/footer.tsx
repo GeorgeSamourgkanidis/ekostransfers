@@ -1,6 +1,11 @@
+"use client";
+
 import { BUSINESS } from "@/lib/pricing";
+import { useTranslations } from "@/components/language-provider";
 
 export function Footer() {
+  const t = useTranslations();
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
@@ -8,7 +13,7 @@ export function Footer() {
         <div className="border-t border-primary-foreground/10 pt-4 text-center text-sm text-primary-foreground/50">
           <div className="flex items-center gap-2">
             <span>
-              Copyright
+              {t.footer.copyright}
               {"© "}
               {new Date().getFullYear()} {BUSINESS.name}
             </span>

@@ -3,10 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/components/language-provider";
 
 const LANGUAGES = [
   {
-    code: "en",
+    code: "en" as const,
     label: "English",
     flag: (
       <svg
@@ -36,8 +37,8 @@ const LANGUAGES = [
     ),
   },
   {
-    code: "el",
-    label: "Greek",
+    code: "el" as const,
+    label: "Ελληνικά",
     flag: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,11 +59,11 @@ const LANGUAGES = [
 ];
 
 export function LanguageSwitcher() {
-  const [current, setCurrent] = useState("en");
+  const { locale, setLocale, t } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const currentLang = LANGUAGES.find((l) => l.code === current)!;
+  const currentLang = LANGUAGES.find((l) => l.code === locale)!;
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -98,7 +99,7 @@ export function LanguageSwitcher() {
       {open && (
         <ul
           role="listbox"
-          aria-label="Select language"
+          aria-label={t.language.selectLanguage}
           className={cn(
             "absolute right-0 top-full mt-2 z-50",
             "min-w-[140px] overflow-hidden rounded-xl border border-primary-foreground/10",
@@ -107,15 +108,15 @@ export function LanguageSwitcher() {
           )}
         >
           {LANGUAGES.map((lang) => (
-            <li key={lang.code} role="option" aria-selected={current === lang.code}>
+            <li key={lang.code} role="option" aria-selected={locale === lang.code}>
               <button
                 onClick={() => {
-                  setCurrent(lang.code);
+                  setLocale(lang.code);
                   setOpen(false);
                 }}
                 className={cn(
                   "flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors",
-                  current === lang.code
+                  locale === lang.code
                     ? "bg-accent/20 text-accent font-medium"
                     : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground",
                 )}

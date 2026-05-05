@@ -16,24 +16,24 @@ import {
 import { cn } from "@/lib/utils";
 import { CONTACT, BUSINESS } from "@/lib/pricing";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { useTranslations } from "@/components/language-provider";
 import {
   generateWhatsAppUrl,
   generateViberUrl,
   generateSimpleMessage,
 } from "@/lib/whatsapp";
 
-
-const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  // { href: "/fare-calculator", label: "Fare Calculator" }, // Hidden for now
-  { href: "/contact", label: "Contact" },
-];
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations();
+
+  const NAV_LINKS = [
+    { href: "/", label: t.nav.home },
+    { href: "/services", label: t.nav.services },
+    { href: "/contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,7 +105,7 @@ export function Navbar() {
               rel="noopener noreferrer"
             >
               <MessageCircle className="size-4" />
-              WhatsApp
+              {t.contact.whatsapp}
             </a>
           </Button>
           <Button
@@ -119,7 +119,7 @@ export function Navbar() {
               rel="noopener noreferrer"
             >
               <Phone className="size-4" />
-              Viber
+              {t.contact.viber}
             </a>
           </Button>
         </div>
@@ -140,7 +140,7 @@ export function Navbar() {
                 ) : (
                   <Menu className="size-5" />
                 )}
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{t.nav.toggleMenu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80 bg-primary">

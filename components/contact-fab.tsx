@@ -88,7 +88,6 @@ export function ContactFAB() {
         className={cn(
           "flex size-14 items-center justify-center rounded-full shadow-xl transition-all duration-300",
           "bg-accent text-accent-foreground hover:bg-accent/90",
-          open && "rotate-45",
         )}
       >
         {open ? (

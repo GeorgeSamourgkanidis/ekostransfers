@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { CONTACT, BUSINESS } from "@/lib/pricing";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import {
   generateWhatsAppUrl,
   generateViberUrl,
@@ -85,6 +86,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher />
           <a
             href={`tel:${CONTACT.phone}`}
             className="flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
@@ -122,46 +124,49 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-primary-foreground hover:bg-primary-foreground/10"
-            >
-              {mobileOpen ? (
-                <X className="size-5" />
-              ) : (
-                <Menu className="size-5" />
-              )}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-80 bg-primary">
-            <SheetHeader>
-              <SheetTitle />
-            </SheetHeader>
-            <div className="flex flex-col gap-2 px-4 pt-4">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={cn(
-                    "rounded-lg px-4 py-3 text-base font-medium transition-colors",
-                    pathname === link.href
-                      ? "bg-accent/20 text-accent"
-                      : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground",
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-            </div>
-          </SheetContent>
-        </Sheet>
+        {/* Mobile Language + Menu */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <LanguageSwitcher />
+          {/* Mobile Menu */}
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
+              >
+                {mobileOpen ? (
+                  <X className="size-5" />
+                ) : (
+                  <Menu className="size-5" />
+                )}
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80 bg-primary">
+              <SheetHeader>
+                <SheetTitle />
+              </SheetHeader>
+              <div className="flex flex-col gap-2 px-4 pt-4">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "rounded-lg px-4 py-3 text-base font-medium transition-colors",
+                      pathname === link.href
+                        ? "bg-accent/20 text-accent"
+                        : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </nav>
     </header>
   );

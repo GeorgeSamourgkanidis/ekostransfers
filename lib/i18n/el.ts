@@ -252,7 +252,7 @@ export const el: Translations = {
   contactPage: {
     heroTitle: "Επικοινωνήστε μαζί μας",
     heroSubtitle:
-      "Έτοιμοι να κλείσετε τη μεταφορά σας ή έχετε κάποια ερώτηση; Είμαστε διαθέσιμοι 24/7 και χαρούμενοι να βοηθήσουμε.",
+      "Έτοιμοι να κλείσετε τη μεταφορά σας ή έχετε κάποια ερώτηση; Είμαστε διαθέσιμοι 24/7 και χαρ��ύμενοι να βοηθήσουμε.",
 
     // Contact form section
     sendMessage: "Στείλτε μας Μήνυμα",
@@ -330,6 +330,33 @@ export const el: Translations = {
     distance: "Απόσταση",
     totalEstimate: "Συνολική εκτίμηση",
     bookThisTrip: "Κλείστε αυτό το Ταξίδι μέσω WhatsApp",
+  },
+
+  // Gallery page
+  galleryPage: {
+    heroTitle: "Το Όχημά μας",
+    heroSubtitle:
+      "Ρίξτε μια ματιά στο εξωτερικό και εσωτερικό του Mercedes-Benz Vito μας — καθαρό, ευρύχωρο και έτοιμο να σας μεταφέρει άνετα.",
+    exteriorTitle: "Εξωτερικό",
+    exteriorSubtitle: "Το Mercedes-Benz Vito μας φωτογραφημένο γύρω από τη Θεσσαλονίκη",
+    interiorTitle: "Εσωτερικό",
+    interiorSubtitle: "Ευρύχωρη και άνετη καμπίνα για κάθε διαδρομή",
+    images: {
+      exterior1Alt: "Mercedes-Benz Vito στο Αεροδρόμιο Θεσσαλονίκης, μπροστινή άποψη",
+      exterior2Alt: "Mercedes-Benz Vito σε παραθαλάσσιο δρόμο κοντά στη Θεσσαλονίκη",
+      exterior3Alt: "Mercedes-Benz Vito κοντά στον Λευκό Πύργο, Θεσσαλονίκη",
+      exterior4Alt: "Mercedes-Benz Vito στις αφίξεις Αεροδρομίου Θεσσαλονίκης τη νύχτα",
+      interior1Alt: "Πίσω καμπίνα επιβατών Mercedes-Benz Vito",
+      interior2Alt: "Ταμπλό και μπροστινή καμπίνα Mercedes-Benz Vito",
+      interior3Alt: "Ευρύχωρο εσωτερικό και χώρος αποσκευών Mercedes-Benz Vito",
+    },
+    exterior1Label: "Στο Αεροδρόμιο",
+    exterior2Label: "Παραθαλάσσιος Δρόμος",
+    exterior3Label: "Λευκός Πύργος",
+    exterior4Label: "Παραλαβή από Αεροδρόμιο",
+    interior1Label: "Καμπίνα Επιβατών",
+    interior2Label: "Ταμπλό",
+    interior3Label: "Χώρος Αποσκευών",
   },
 
   // Metadata

@@ -329,6 +329,33 @@ export const en = {
     bookThisTrip: "Book This Trip via WhatsApp",
   },
 
+  // Gallery page
+  galleryPage: {
+    heroTitle: "Our Vehicle",
+    heroSubtitle:
+      "Take a look inside and outside our Mercedes-Benz Vito — clean, spacious, and ready to get you there in comfort.",
+    exteriorTitle: "Exterior",
+    exteriorSubtitle: "Our Mercedes-Benz Vito photographed around Thessaloniki",
+    interiorTitle: "Interior",
+    interiorSubtitle: "A spacious and comfortable cabin for every journey",
+    images: {
+      exterior1Alt: "Mercedes-Benz Vito at Thessaloniki Airport, front view",
+      exterior2Alt: "Mercedes-Benz Vito on a coastal road near Thessaloniki",
+      exterior3Alt: "Mercedes-Benz Vito near the White Tower, Thessaloniki",
+      exterior4Alt: "Mercedes-Benz Vito at Thessaloniki Airport arrivals at night",
+      interior1Alt: "Mercedes-Benz Vito rear passenger cabin",
+      interior2Alt: "Mercedes-Benz Vito dashboard and front cabin",
+      interior3Alt: "Mercedes-Benz Vito spacious interior and luggage area",
+    },
+    exterior1Label: "At the Airport",
+    exterior2Label: "Coastal Road",
+    exterior3Label: "White Tower",
+    exterior4Label: "Airport Pickup",
+    interior1Label: "Passenger Cabin",
+    interior2Label: "Dashboard",
+    interior3Label: "Luggage Space",
+  },
+
   // Metadata
   meta: {
     homeTitle: "Ekos Transfers - Thessaloniki Airport Transfers",
@@ -343,6 +370,9 @@ export const en = {
     fareCalculatorTitle: "Fare Calculator",
     fareCalculatorDescription:
       "Calculate your transfer fare from Thessaloniki Airport to any destination. Transparent pricing with no hidden costs.",
+    galleryTitle: "Gallery",
+    galleryDescription:
+      "See our Mercedes-Benz Vito transfer vehicle — exterior and interior photos of the car used for airport transfers in Thessaloniki.",
   },
 } as const;
 

@@ -99,7 +99,12 @@ export default function HomePage() {
         imageSrc="/images/hero-home.jpg"
         imageAlt="Professional airport transfer vehicle at Thessaloniki Airport"
         size="large"
-      />
+        centered
+      >
+        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Link href="/contact">{t.common.contactUs}</Link>
+        </Button>
+      </HeroSection>
 
       {/* Stats Bar */}
       <section className="relative -mt-16 z-20">
@@ -246,28 +251,6 @@ export default function HomePage() {
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-accent py-16 lg:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-accent-foreground md:text-4xl text-balance">
-            {t.home.ctaTitle}
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-accent-foreground/80">
-            {t.home.ctaSubtitle}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="!bg-background border-accent-foreground/20 bg-transparent text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground"
-            >
-              <Link href="/contact">{t.common.contactUs}</Link>
-            </Button>
           </div>
         </div>
       </section>

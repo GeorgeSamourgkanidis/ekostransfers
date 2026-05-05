@@ -20,6 +20,7 @@ export const el: Translations = {
     services: "Υπηρεσίες",
     fareCalculator: "Υπολογισμός Κόστους",
     contact: "Επικοινωνία",
+    gallery: "Γκαλερί",
     toggleMenu: "Εναλλαγή μενού",
   },
 
@@ -373,5 +374,8 @@ export const el: Translations = {
     fareCalculatorTitle: "Υπολογισμός Κόστους",
     fareCalculatorDescription:
       "Υπολογίστε το κόστος μεταφοράς σας από το Αεροδρόμιο Θεσσαλονίκης σε οποιονδήποτε προορισμό. Διαφανής τιμολόγηση χωρίς κρυφές χρεώσεις.",
+    galleryTitle: "Γκαλερί",
+    galleryDescription:
+      "Δείτε το όχημα μεταφοράς μας Mercedes-Benz Vito — εξωτερικές και εσωτερικές φωτογραφίες του αυτοκινήτου που χρησιμοποιείται για μεταφορές από το αεροδρόμιο Θεσσαλονίκης.",
   },
 } as const;

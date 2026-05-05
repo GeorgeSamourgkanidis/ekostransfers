@@ -9,6 +9,7 @@ interface HeroSectionProps {
   children?: React.ReactNode;
   size?: "large" | "medium";
   overlay?: "dark" | "darker";
+  centered?: boolean;
 }
 
 export function HeroSection({
@@ -19,6 +20,7 @@ export function HeroSection({
   children,
   size = "large",
   overlay = "dark",
+  centered = false,
 }: HeroSectionProps) {
   return (
     <section
@@ -49,11 +51,16 @@ export function HeroSection({
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-32 lg:px-8">
-        <div className="max-w-3xl">
+        <div
+          className={cn(
+            "max-w-3xl",
+            centered && "mx-auto text-center",
+          )}
+        >
           <h1
             className={cn(
               "font-serif font-bold leading-tight tracking-tight text-primary-foreground text-balance",
-              size === "large" ? "text-4xl md:text-5xl lg:text-6xl" : "text-3xl md:text-4xl lg:text-5xl"
+              size === "large" ? "text-4xl md:text-5xl lg:text-6xl" : "text-3xl md:text-4xl lg:text-5xl",
             )}
           >
             {title}
@@ -63,7 +70,16 @@ export function HeroSection({
               {subtitle}
             </p>
           )}
-          {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
+          {children && (
+            <div
+              className={cn(
+                "mt-8 flex flex-wrap gap-4",
+                centered && "justify-center",
+              )}
+            >
+              {children}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -18,6 +18,7 @@ export const en = {
     services: "Services",
     fareCalculator: "Fare Calculator",
     contact: "Contact",
+    gallery: "Gallery",
     toggleMenu: "Toggle menu",
   },
 

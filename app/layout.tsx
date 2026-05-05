@@ -4,6 +4,8 @@ import { Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ContactFAB } from "@/components/contact-fab";
+import { LanguageProvider } from "@/components/language-provider";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | EKOS TRANSFERS",
   },
   description:
-    "Professional private driver service for airport transfers and city transportation in Thessaloniki, Greece. Safe, reliable, and comfortable rides at competitive prices.",
+    "Professional private driver service. Safe, reliable, and comfortable rides at competitive prices.",
   keywords: [
     "Thessaloniki airport transfer",
     "SKG airport taxi",
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "EKOS TRANSFERS - Airport Transfers in Thessaloniki",
     description:
-      "Professional private driver service for airport transfers in Thessaloniki, Greece.",
+      "Professional private driver service. Safe, reliable, and comfortable rides at competitive prices.",
     type: "website",
     locale: "en_US",
   },
@@ -69,9 +71,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ContactFAB />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

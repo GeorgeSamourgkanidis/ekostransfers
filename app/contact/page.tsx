@@ -1,61 +1,60 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroSection } from "@/components/hero-section";
-import { CONTACT, BUSINESS } from "@/lib/pricing";
+import { CONTACT } from "@/lib/pricing";
 import {
   generateWhatsAppUrl,
   generateViberUrl,
   generateSimpleMessage,
 } from "@/lib/whatsapp";
 import { ContactForm } from "@/components/contact-form";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `Get in touch with ${BUSINESS.name} for airport transfers in Thessaloniki. Call, email, or WhatsApp us for instant booking.`,
-};
-
-const CONTACT_METHODS = [
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    value: "Chat Now",
-    href: generateWhatsAppUrl(generateSimpleMessage()),
-    highlight: "whatsapp",
-    external: true,
-  },
-  {
-    icon: Phone,
-    title: "Viber",
-    value: "Call on Viber",
-    href: generateViberUrl(generateSimpleMessage()),
-    highlight: "viber",
-    external: true,
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: CONTACT.phone,
-    href: `tel:${CONTACT.whatsapp}`,
-    highlight: "none",
-    external: false,
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: CONTACT.email,
-    href: `mailto:${CONTACT.email}`,
-    highlight: "none",
-    external: false,
-  },
-];
+import { useTranslations } from "@/components/language-provider";
 
 export default function ContactPage() {
+  const t = useTranslations();
+
+  const CONTACT_METHODS = [
+    {
+      icon: MessageCircle,
+      title: t.contact.whatsapp,
+      value: t.contact.chatNow,
+      href: generateWhatsAppUrl(generateSimpleMessage()),
+      highlight: "whatsapp",
+      external: true,
+    },
+    {
+      icon: Phone,
+      title: t.contact.viber,
+      value: t.contact.callOnViber,
+      href: generateViberUrl(generateSimpleMessage()),
+      highlight: "viber",
+      external: true,
+    },
+    {
+      icon: Phone,
+      title: t.contact.phone,
+      value: CONTACT.phone,
+      href: `tel:${CONTACT.whatsapp}`,
+      highlight: "none",
+      external: false,
+    },
+    {
+      icon: Mail,
+      title: t.contact.email,
+      value: CONTACT.email,
+      href: `mailto:${CONTACT.email}`,
+      highlight: "none",
+      external: false,
+    },
+  ];
+
   return (
     <>
       <HeroSection
-        title="Get in Touch"
-        subtitle="Ready to book your transfer or have a question? We are available 24/7 and happy to help."
+        title={t.contactPage.heroTitle}
+        subtitle={t.contactPage.heroSubtitle}
         imageSrc="/images/hero-contact.jpg"
         imageAlt="Thessaloniki port area at sunset"
         size="medium"
@@ -104,14 +103,13 @@ export default function ContactPage() {
             {/* Form */}
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-                Send a Message
+                {t.contactPage.sendMessage}
               </p>
               <h2 className="mt-3 font-serif text-3xl font-bold text-foreground text-balance">
-                Contact Form
+                {t.contactPage.contactFormTitle}
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Have a specific question or need a custom quote? Fill out the
-                form below and we will get back to you as soon as possible.
+                {t.contactPage.contactFormDescription}
               </p>
               <div className="mt-8">
                 <ContactForm />
@@ -126,22 +124,22 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <Clock className="size-6 text-accent" />
                     <h3 className="font-serif text-lg font-semibold text-primary-foreground">
-                      Operating Hours
+                      {t.contactPage.operatingHours}
                     </h3>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-primary-foreground/70">
-                        Transfers
+                        {t.contactPage.transfers}
                       </span>
                       <span className="font-semibold text-accent">24/7</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-primary-foreground/70">
-                        Response
+                        {t.contactPage.response}
                       </span>
                       <span className="font-semibold text-accent">
-                        {"< 30 min"}
+                        {t.contactPage.lessThan30Min}
                       </span>
                     </div>
                   </div>

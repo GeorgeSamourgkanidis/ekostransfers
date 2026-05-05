@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslations } from "@/components/language-provider";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,6 +14,7 @@ export function ContactForm() {
     phone: "",
     message: "",
   });
+  const t = useTranslations();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -28,11 +30,10 @@ export function ContactForm() {
             <CheckCircle2 className="size-8 text-accent" />
           </div>
           <h3 className="font-serif text-xl font-semibold text-card-foreground">
-            Message Sent!
+            {t.contactForm.messageSent}
           </h3>
           <p className="text-sm text-muted-foreground">
-            Thank you for reaching out. We will get back to you within a few
-            hours. For faster response, reach us directly via WhatsApp.
+            {t.contactForm.thankYou}
           </p>
           <Button
             variant="outline"
@@ -41,7 +42,7 @@ export function ContactForm() {
               setFormData({ name: "", email: "", phone: "", message: "" });
             }}
           >
-            Send Another Message
+            {t.contactForm.sendAnother}
           </Button>
         </CardContent>
       </Card>
@@ -57,7 +58,7 @@ export function ContactForm() {
               htmlFor="contact-name"
               className="text-sm font-medium text-card-foreground"
             >
-              Full Name
+              {t.contactForm.fullName}
             </label>
             <input
               id="contact-name"
@@ -67,7 +68,7 @@ export function ContactForm() {
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              placeholder="Your name"
+              placeholder={t.contactForm.namePlaceholder}
               className="h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none"
             />
           </div>
@@ -78,7 +79,7 @@ export function ContactForm() {
                 htmlFor="contact-email"
                 className="text-sm font-medium text-card-foreground"
               >
-                Email
+                {t.contactForm.email}
               </label>
               <input
                 id="contact-email"
@@ -88,7 +89,7 @@ export function ContactForm() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                placeholder="your@email.com"
+                placeholder={t.contactForm.emailPlaceholder}
                 className="h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none"
               />
             </div>
@@ -97,7 +98,7 @@ export function ContactForm() {
                 htmlFor="contact-phone"
                 className="text-sm font-medium text-card-foreground"
               >
-                Phone (optional)
+                {t.contactForm.phone}
               </label>
               <input
                 id="contact-phone"
@@ -106,7 +107,7 @@ export function ContactForm() {
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
-                placeholder="+30 XXX XXX XXXX"
+                placeholder={t.contactForm.phonePlaceholder}
                 className="h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none"
               />
             </div>
@@ -117,7 +118,7 @@ export function ContactForm() {
               htmlFor="contact-message"
               className="text-sm font-medium text-card-foreground"
             >
-              Message
+              {t.contactForm.message}
             </label>
             <textarea
               id="contact-message"
@@ -127,7 +128,7 @@ export function ContactForm() {
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              placeholder="Tell us about your transfer needs (date, time, destination, number of passengers...)"
+              placeholder={t.contactForm.messagePlaceholder}
               className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none"
             />
           </div>
@@ -138,7 +139,7 @@ export function ContactForm() {
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
             <Send className="size-4" />
-            Send Message
+            {t.contactForm.sendMessage}
           </Button>
         </form>
       </CardContent>

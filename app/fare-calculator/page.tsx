@@ -1,21 +1,20 @@
-import type { Metadata } from "next";
+"use client";
+
 import { HeroSection } from "@/components/hero-section";
 import { FareCalculatorForm } from "@/components/fare-calculator-form";
-import { BUSINESS, POPULAR_ROUTES, PRICING, calculateFare } from "@/lib/pricing";
+import { POPULAR_ROUTES, PRICING, calculateFare } from "@/lib/pricing";
 import { Card, CardContent } from "@/components/ui/card";
 import { Info } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Fare Calculator",
-  description: `Calculate your transfer fare from Thessaloniki Airport to any destination. ${BUSINESS.name} offers transparent pricing with no hidden costs.`,
-};
+import { useTranslations } from "@/components/language-provider";
 
 export default function FareCalculatorPage() {
+  const t = useTranslations();
+
   return (
     <>
       <HeroSection
-        title="Fare Calculator"
-        subtitle="Get an instant estimate for your transfer. Enter your pickup and drop-off locations to see the distance, duration, and fare."
+        title={t.fareCalculatorPage.heroTitle}
+        subtitle={t.fareCalculatorPage.heroSubtitle}
         imageSrc="/images/hero-calculator.jpg"
         imageAlt="Scenic road in northern Greece"
         size="medium"
@@ -36,12 +35,12 @@ export default function FareCalculatorPage() {
               <Card className="border-0 bg-primary shadow-md">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <h3 className="font-serif text-lg font-semibold text-primary-foreground">
-                    Pricing Details
+                    {t.fareCalculatorPage.pricingDetails}
                   </h3>
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-2">
                       <span className="text-sm text-primary-foreground/70">
-                        Base fare
+                        {t.fareCalculatorPage.baseFare}
                       </span>
                       <span className="font-semibold text-primary-foreground">
                         {PRICING.baseFare.toFixed(2)} {PRICING.currency}
@@ -49,7 +48,7 @@ export default function FareCalculatorPage() {
                     </div>
                     <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-2">
                       <span className="text-sm text-primary-foreground/70">
-                        Rate per km
+                        {t.fareCalculatorPage.ratePerKm}
                       </span>
                       <span className="font-semibold text-primary-foreground">
                         {PRICING.perKmRate.toFixed(2)} {PRICING.currency}
@@ -57,7 +56,7 @@ export default function FareCalculatorPage() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-primary-foreground/70">
-                        Minimum fare
+                        {t.fareCalculatorPage.minimumFare}
                       </span>
                       <span className="font-semibold text-primary-foreground">
                         {PRICING.minimumFare.toFixed(2)} {PRICING.currency}
@@ -71,9 +70,7 @@ export default function FareCalculatorPage() {
               <div className="flex gap-3 rounded-xl bg-accent/10 p-4">
                 <Info className="size-5 shrink-0 text-accent" />
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Prices shown are estimates based on distance. Actual fare may
-                  vary slightly based on traffic conditions and specific
-                  pickup/drop-off points. Final price is confirmed upon booking.
+                  {t.fareCalculatorPage.disclaimer}
                 </p>
               </div>
 
@@ -81,7 +78,7 @@ export default function FareCalculatorPage() {
               <Card className="border-0 shadow-md">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <h3 className="font-serif text-lg font-semibold text-card-foreground">
-                    Popular Routes
+                    {t.fareCalculatorPage.popularRoutes}
                   </h3>
                   <div className="flex flex-col gap-3">
                     {POPULAR_ROUTES.map((route, index) => (
@@ -94,7 +91,7 @@ export default function FareCalculatorPage() {
                             {route.to}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            {route.distance} km ~ {route.duration} min
+                            {route.distance} {t.common.km} ~ {route.duration} {t.common.min}
                           </p>
                         </div>
                         <span className="text-sm font-bold text-accent">

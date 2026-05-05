@@ -18,7 +18,7 @@ export const BUSINESS = {
   name: "EKOS TRANSFERS",
   tagline: "Your Trusted Airport Transfer in Thessaloniki",
   description:
-    "Professional private driver service for airport transfers and city transportation in Thessaloniki, Greece. Safe, reliable, and comfortable rides at fixed prices.",
+    "Professional private driver service. Safe, reliable, and comfortable rides at fixed prices.",
   yearsExperience: 10,
   happyCustomers: 5000,
 } as const;

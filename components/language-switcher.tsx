@@ -108,7 +108,11 @@ export function LanguageSwitcher() {
           )}
         >
           {LANGUAGES.map((lang) => (
-            <li key={lang.code} role="option" aria-selected={locale === lang.code}>
+            <li
+              key={lang.code}
+              role="option"
+              aria-selected={locale === lang.code}
+            >
               <button
                 onClick={() => {
                   setLocale(lang.code);

@@ -84,7 +84,7 @@ function AddressInput({
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/autocomplete?q=${encodeURIComponent(q.trim())}`
+        `/api/autocomplete?q=${encodeURIComponent(q.trim())}`,
       );
       const data: Suggestion[] = await res.json();
       setSuggestions(data);
@@ -123,14 +123,10 @@ function AddressInput({
     if (!open) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setActiveIndex((prev) =>
-        prev < suggestions.length - 1 ? prev + 1 : 0
-      );
+      setActiveIndex((prev) => (prev < suggestions.length - 1 ? prev + 1 : 0));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setActiveIndex((prev) =>
-        prev > 0 ? prev - 1 : suggestions.length - 1
-      );
+      setActiveIndex((prev) => (prev > 0 ? prev - 1 : suggestions.length - 1));
     } else if (e.key === "Enter" && activeIndex >= 0) {
       e.preventDefault();
       selectSuggestion(suggestions[activeIndex]);
@@ -197,7 +193,10 @@ function AddressInput({
             <Loader2 className="size-4 animate-spin text-muted-foreground" />
           )}
           {hasCoords && !loading && (
-            <div className="size-2 rounded-full bg-emerald-500" title={locationConfirmedLabel} />
+            <div
+              className="size-2 rounded-full bg-emerald-500"
+              title={locationConfirmedLabel}
+            />
           )}
           {query.length > 0 && !loading && (
             <button
@@ -242,9 +241,7 @@ function AddressInput({
         )}
       </div>
       {!hasCoords && query.length >= 2 && !loading && (
-        <p className="text-xs text-muted-foreground">
-          {selectHint}
-        </p>
+        <p className="text-xs text-muted-foreground">{selectHint}</p>
       )}
     </div>
   );
@@ -322,7 +319,7 @@ export function FareCalculatorForm() {
           distance: `${result.distanceKm} km`,
           duration: `${result.durationMin} min`,
           fare: `${result.fareEur.toFixed(2)} ${result.currency}`,
-        })
+        }),
       )
     : null;
 
@@ -408,7 +405,9 @@ export function FareCalculatorForm() {
                 <div className="flex items-start gap-2">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
                   <div>
-                    <p className="text-xs text-muted-foreground">{t.fareForm.fromLabel}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t.fareForm.fromLabel}
+                    </p>
                     <p className="text-sm font-medium text-card-foreground">
                       {result.from}
                     </p>
@@ -418,7 +417,9 @@ export function FareCalculatorForm() {
                 <div className="flex items-start gap-2">
                   <Navigation className="mt-0.5 size-4 shrink-0 text-accent" />
                   <div>
-                    <p className="text-xs text-muted-foreground">{t.fareForm.toLabel}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t.fareForm.toLabel}
+                    </p>
                     <p className="text-sm font-medium text-card-foreground">
                       {result.to}
                     </p>
@@ -433,14 +434,18 @@ export function FareCalculatorForm() {
                   <span className="text-lg font-bold text-card-foreground">
                     {result.distanceKm}
                   </span>
-                  <span className="text-xs text-muted-foreground">{t.common.km}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {t.common.km}
+                  </span>
                 </div>
                 <div className="flex flex-col items-center gap-1 rounded-xl bg-muted/50 p-4">
                   <Clock className="size-5 text-accent" />
                   <span className="text-lg font-bold text-card-foreground">
                     {result.durationMin}
                   </span>
-                  <span className="text-xs text-muted-foreground">{t.common.min}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {t.common.min}
+                  </span>
                 </div>
                 <div className="flex flex-col items-center gap-1 rounded-xl bg-accent/10 p-4">
                   <span className="text-xs font-semibold uppercase text-accent">
@@ -465,7 +470,8 @@ export function FareCalculatorForm() {
                 </div>
                 <div className="flex justify-between">
                   <span>
-                    {t.fareForm.distance} ({result.distanceKm} {t.common.km} x {PRICING.perKmRate.toFixed(2)})
+                    {t.fareForm.distance} ({result.distanceKm} {t.common.km} x{" "}
+                    {PRICING.perKmRate.toFixed(2)})
                   </span>
                   <span>
                     {(result.distanceKm * PRICING.perKmRate).toFixed(2)}{" "}

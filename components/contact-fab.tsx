@@ -85,18 +85,16 @@ export function ContactFAB() {
       {/* Main FAB button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        aria-label={open ? t.contact.closeContactMenu : t.contact.openContactMenu}
+        aria-label={
+          open ? t.contact.closeContactMenu : t.contact.openContactMenu
+        }
         aria-expanded={open}
         className={cn(
           "flex size-14 items-center justify-center rounded-full shadow-xl transition-all duration-300",
           "bg-accent text-accent-foreground hover:bg-accent/90",
         )}
       >
-        {open ? (
-          <X className="size-6" />
-        ) : (
-          <MessageCircle className="size-6" />
-        )}
+        {open ? <X className="size-6" /> : <MessageCircle className="size-6" />}
       </button>
     </div>
   );

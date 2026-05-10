@@ -9,7 +9,6 @@ import {
   generateViberUrl,
   generateSimpleMessage,
 } from "@/lib/whatsapp";
-import { ContactForm } from "@/components/contact-form";
 import { useTranslations } from "@/components/language-provider";
 
 export default function ContactPage() {
@@ -55,7 +54,7 @@ export default function ContactPage() {
       <HeroSection
         title={t.contactPage.heroTitle}
         subtitle={t.contactPage.heroSubtitle}
-        imageSrc="/images/hero-contact.jpg"
+        imageSrc="/logo.png"
         imageAlt="Thessaloniki port area at sunset"
         size="medium"
       />
@@ -97,23 +96,17 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Form */}
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-                {t.contactPage.sendMessage}
-              </p>
               <h2 className="mt-3 font-serif text-3xl font-bold text-foreground text-balance">
-                {t.contactPage.contactFormTitle}
+                {t.contactPage.sendMessage}
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                {t.contactPage.contactFormDescription}
+                {t.contactPage.sendMessageDescription}
               </p>
-              <div className="mt-8">
-                <ContactForm />
-              </div>
             </div>
 
             {/* Info Side */}

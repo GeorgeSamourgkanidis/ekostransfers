@@ -39,21 +39,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -70,10 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body className="flex min-h-screen flex-col font-sans antialiased">
         <LanguageProvider>
           <Navbar />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
           <ContactFAB />
         </LanguageProvider>

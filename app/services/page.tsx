@@ -84,13 +84,13 @@ export default function ServicesPage() {
       <HeroSection
         title={t.servicesPage.heroTitle}
         subtitle={t.servicesPage.heroSubtitle}
-        imageSrc="/images/hero-services.jpg"
+        imageSrc="/images/hero-services.png"
         imageAlt="Interior of a premium transfer vehicle"
         size="medium"
       />
 
       {/* Services Grid */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => (
@@ -134,7 +134,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-primary py-16 lg:py-24">
+      <section className="bg-primary py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mt-3 font-serif text-3xl font-bold text-primary-foreground md:text-4xl text-balance">

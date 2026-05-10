@@ -21,7 +21,7 @@ export default function FareCalculatorPage() {
       />
 
       {/* Calculator Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Calculator Form */}
@@ -91,11 +91,13 @@ export default function FareCalculatorPage() {
                             {route.to}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            {route.distance} {t.common.km} ~ {route.duration} {t.common.min}
+                            {route.distance} {t.common.km} ~ {route.duration}{" "}
+                            {t.common.min}
                           </p>
                         </div>
                         <span className="text-sm font-bold text-accent">
-                          {calculateFare(route.distance).toFixed(0)} {PRICING.currency}
+                          {calculateFare(route.distance).toFixed(0)}{" "}
+                          {PRICING.currency}
                         </span>
                       </div>
                     ))}

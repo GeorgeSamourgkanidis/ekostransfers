@@ -26,7 +26,7 @@ export function HeroSection({
     <section
       className={cn(
         "relative flex items-center overflow-hidden",
-        size === "large" ? "min-h-[70vh]" : "min-h-[50vh]"
+        size === "large" ? "min-h-[70vh]" : "min-h-[50vh]",
       )}
     >
       {/* Background Image */}
@@ -43,24 +43,19 @@ export function HeroSection({
       <div
         className={cn(
           "absolute inset-0",
-          overlay === "dark"
-            ? "bg-primary/60"
-            : "bg-primary/75"
+          overlay === "dark" ? "bg-primary/60" : "bg-primary/75",
         )}
       />
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-32 lg:px-8">
-        <div
-          className={cn(
-            "max-w-3xl",
-            centered && "mx-auto text-center",
-          )}
-        >
+        <div className={cn("max-w-3xl", centered && "mx-auto text-center")}>
           <h1
             className={cn(
               "font-serif font-bold leading-tight tracking-tight text-primary-foreground text-balance",
-              size === "large" ? "text-4xl md:text-5xl lg:text-6xl" : "text-3xl md:text-4xl lg:text-5xl",
+              size === "large"
+                ? "text-4xl md:text-5xl lg:text-6xl"
+                : "text-3xl md:text-4xl lg:text-5xl",
             )}
           >
             {title}

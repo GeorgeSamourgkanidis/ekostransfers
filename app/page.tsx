@@ -6,7 +6,7 @@ import {
   Shield,
   Clock,
   Star,
-  MapPin,
+  Palmtree,
   TreePalm,
   Car,
   ArrowRight,
@@ -29,9 +29,21 @@ export default function HomePage() {
       label: t.home.stats.hotelsLabel,
       icon: Hotel,
     },
-    { value: t.home.stats.available, label: t.home.stats.availableLabel, icon: Clock },
-    { value: t.home.stats.airport, label: t.home.stats.airportLabel, icon: Plane },
-    { value: t.home.stats.tours, label: t.home.stats.toursLabel, icon: TreePalm },
+    {
+      value: t.home.stats.available,
+      label: t.home.stats.availableLabel,
+      icon: Clock,
+    },
+    {
+      value: t.home.stats.airport,
+      label: t.home.stats.airportLabel,
+      icon: Plane,
+    },
+    {
+      value: t.home.stats.tours,
+      label: t.home.stats.toursLabel,
+      icon: TreePalm,
+    },
   ];
 
   const SERVICES = [
@@ -46,9 +58,9 @@ export default function HomePage() {
       description: t.home.services.airportDropoff.description,
     },
     {
-      icon: MapPin,
-      title: t.home.services.cityTours.title,
-      description: t.home.services.cityTours.description,
+      icon: Palmtree,
+      title: t.servicesPage.services.halkidiki.title,
+      description: t.servicesPage.services.halkidiki.description,
     },
     {
       icon: ArrowRight,
@@ -96,12 +108,16 @@ export default function HomePage() {
       <HeroSection
         title={t.home.heroTitle}
         subtitle={t.home.heroSubtitle}
-        imageSrc="/images/hero-home.jpg"
+        imageSrc="/images/hero-home.png"
         imageAlt="Professional airport transfer vehicle at Thessaloniki Airport"
         size="large"
         centered
       >
-        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button
+          asChild
+          size="lg"
+          className="bg-accent text-accent-foreground hover:bg-accent/90"
+        >
           <Link href="/contact">{t.common.contactUs}</Link>
         </Button>
       </HeroSection>
@@ -129,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -173,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-primary py-16 lg:py-24">
+      <section className="bg-primary py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mt-3 font-serif text-3xl font-bold text-primary-foreground md:text-4xl text-balance">
@@ -202,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* Popular Routes */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mt-3 font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">

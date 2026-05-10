@@ -53,7 +53,7 @@ export const en = {
     heroTitle: "Your Trusted Transfer",
     heroSubtitle:
       "Professional private driver service. Safe, comfortable, and always on time.",
-    
+
     // Stats
     stats: {
       hotels: "Hotels",
@@ -70,7 +70,7 @@ export const en = {
     servicesSection: "What We Offer",
     servicesTitle: "Our Transfer Services",
     viewAllServices: "View All Services",
-    
+
     services: {
       airportPickup: {
         title: "Airport Pickup",
@@ -80,7 +80,7 @@ export const en = {
       airportDropoff: {
         title: "Airport Drop-off",
         description:
-          "Timely pickup from your hotel or any location in Thessaloniki. We make sure you get to the airport stress-free.",
+          "Timely pickup from your hotel or any location. We make sure you get to the airport stress-free.",
       },
       cityTours: {
         title: "City Tours",
@@ -146,7 +146,7 @@ export const en = {
   servicesPage: {
     heroTitle: "Our Services",
     heroSubtitle:
-      "From a quick airport pickup to a full day exploring Thessaloniki, we offer a range of professional transfer services tailored to your needs.",
+      "From a quick airport pickup to a full day exploring, we offer a range of professional transfer services tailored to your needs.",
 
     services: {
       airportPickup: {
@@ -157,9 +157,8 @@ export const en = {
         features: [
           "Meet & greet at arrivals hall",
           "Real-time flight tracking",
-          "Free waiting time for flight delays",
           "Help with luggage",
-          "Comfortable air-conditioned sedan",
+          "Comfortable air-conditioned van",
         ],
       },
       airportDropoff: {
@@ -177,14 +176,17 @@ export const en = {
       cityTours: {
         title: "City Tours & Sightseeing",
         description:
-          "Discover Thessaloniki like a local. I take you to the most iconic spots and hidden gems of this beautiful city, at your own pace.",
+          "I take you to the most iconic spots and hidden gems of this beautiful country, at your own pace.",
         features: [
-          "White Tower & waterfront",
-          "Ano Poli (Upper Town)",
+          "White Tower",
+          "Meteora",
+          "Petralona Cave",
+          "Edessa Waterfalls",
           "Roman & Byzantine monuments",
           "Local food market stops",
           "Flexible duration and itinerary",
           "Local tips and recommendations",
+          "Anywhere else you want",
         ],
       },
       halkidiki: {
@@ -195,7 +197,6 @@ export const en = {
         features: [
           "Direct airport to Halkidiki transfer",
           "Scenic coastal routes",
-          "Spacious vehicle for beach gear",
           "Round-trip packages available",
         ],
       },
@@ -230,8 +231,7 @@ export const en = {
     steps: {
       step1: {
         title: "Get a Quote",
-        description:
-          "Contact us with your pickup and drop-off locations.",
+        description: "Contact us with your pickup and drop-off locations.",
       },
       step2: {
         title: "Confirm Booking",
@@ -254,9 +254,8 @@ export const en = {
 
     // Contact form section
     sendMessage: "Send a Message",
-    contactFormTitle: "Contact Form",
-    contactFormDescription:
-      "Have a specific question or need a custom quote? Fill out the form below and we will get back to you as soon as possible.",
+    sendMessageDescription:
+      "Have a specific question or need a custom quote? We will get back to you as soon as possible.",
 
     // Operating hours
     operatingHours: "Operating Hours",
@@ -316,7 +315,8 @@ export const en = {
     destinationPlaceholder: "e.g., Aristotelous Square, Thessaloniki",
     calculateFare: "Calculate Fare",
     calculating: "Calculating...",
-    selectSuggestion: "Select a suggestion from the dropdown for accurate results",
+    selectSuggestion:
+      "Select a suggestion from the dropdown for accurate results",
     clear: "Clear",
     locationConfirmed: "Location confirmed",
 
@@ -343,7 +343,8 @@ export const en = {
       exterior1Alt: "Mercedes-Benz Vito at Thessaloniki Airport, front view",
       exterior2Alt: "Mercedes-Benz Vito on a coastal road near Thessaloniki",
       exterior3Alt: "Mercedes-Benz Vito near the White Tower, Thessaloniki",
-      exterior4Alt: "Mercedes-Benz Vito at Thessaloniki Airport arrivals at night",
+      exterior4Alt:
+        "Mercedes-Benz Vito at Thessaloniki Airport arrivals at night",
       interior1Alt: "Mercedes-Benz Vito rear passenger cabin",
       interior2Alt: "Mercedes-Benz Vito dashboard and front cabin",
       interior3Alt: "Mercedes-Benz Vito spacious interior and luggage area",
@@ -355,6 +356,25 @@ export const en = {
     interior1Label: "Passenger Cabin",
     interior2Label: "Dashboard",
     interior3Label: "Luggage Space",
+    destinationsTitle: "Destinations",
+    destinationsSubtitle:
+      "Explore stunning locations across northern Greece — we take you there",
+    destinationImages: {
+      whiteTowerAlt: "White Tower of Thessaloniki on the waterfront",
+      whiteTowerLabel: "White Tower",
+      meteoraAlt: "Meteora monasteries perched on rock pillars",
+      meteoraLabel: "Meteora",
+      petralonaCaveAlt:
+        "Petralona Cave interior with stalactites and stalagmites",
+      petralonaCaveLabel: "Petralona Cave",
+      edessaWaterfallsAlt: "Edessa Waterfalls flowing through the city park",
+      edessaWaterfallsLabel: "Edessa Waterfalls",
+      romanByzantineAlt:
+        "Ancient Roman and Byzantine monuments in Thessaloniki",
+      romanByzantineLabel: "Roman & Byzantine Monuments",
+      localFoodMarketAlt: "Traditional Greek products at a local food market",
+      localFoodMarketLabel: "Local Food Market",
+    },
   },
 
   // Metadata

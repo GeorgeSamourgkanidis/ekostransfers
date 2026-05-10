@@ -48,7 +48,7 @@ async function getRoute(
   fromLat: number,
   fromLon: number,
   toLat: number,
-  toLon: number
+  toLon: number,
 ): Promise<{ distanceKm: number; durationMin: number } | null> {
   const url = `${OSRM_BASE}/route/v1/driving/${fromLon},${fromLat};${toLon},${toLat}?overview=false`;
 
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
     if (!fromAddress || !toAddress) {
       return NextResponse.json(
         { error: "Both 'from' and 'to' addresses are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
           {
             error: `Could not find the location: "${fromAddress}". Please try a more specific address.`,
           },
-          { status: 400 }
+          { status: 400 },
         );
       }
       // Small delay to respect Nominatim rate limits (1 req/sec)
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
           {
             error: `Could not find the location: "${toAddress}". Please try a more specific address.`,
           },
-          { status: 400 }
+          { status: 400 },
         );
       }
     }
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
       fromGeo.lat,
       fromGeo.lon,
       toGeo.lat,
-      toGeo.lon
+      toGeo.lon,
     );
     if (!route) {
       return NextResponse.json(
@@ -130,13 +130,12 @@ export async function POST(request: NextRequest) {
           error:
             "Could not calculate a driving route between these locations. They may not be reachable by road.",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Calculate fare
-    const fare =
-      PRICING.baseFare + route.distanceKm * PRICING.perKmRate;
+    const fare = PRICING.baseFare + route.distanceKm * PRICING.perKmRate;
     const finalFare = Math.max(fare, PRICING.minimumFare);
 
     return NextResponse.json({
@@ -150,7 +149,7 @@ export async function POST(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "An unexpected error occurred. Please try again." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

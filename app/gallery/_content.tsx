@@ -13,19 +13,9 @@ export default function GalleryContent() {
 
   const EXTERIOR_IMAGES = [
     {
-      src: "/images/gallery/vito-exterior-1.jpg",
+      src: "/images/hero-home.png",
       alt: t.galleryPage.images.exterior1Alt,
       label: t.galleryPage.exterior1Label,
-    },
-    {
-      src: "/images/gallery/vito-exterior-2.jpg",
-      alt: t.galleryPage.images.exterior2Alt,
-      label: t.galleryPage.exterior2Label,
-    },
-    {
-      src: "/images/gallery/vito-exterior-3.jpg",
-      alt: t.galleryPage.images.exterior3Alt,
-      label: t.galleryPage.exterior3Label,
     },
   ];
 

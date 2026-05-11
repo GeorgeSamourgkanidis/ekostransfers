@@ -340,26 +340,17 @@ export const el: Translations = {
     heroSubtitle:
       "Ρίξτε μια ματιά στο εξωτερικό και εσωτερικό του Mercedes-Benz Vito μας — καθαρό, ευρύχωρο και έτοιμο να σας μεταφέρει άνετα.",
     exteriorTitle: "Εξωτερικό",
-    exteriorSubtitle:
-      "Το Mercedes-Benz Vito μας φωτογραφημένο γύρω από τη Θεσσαλονίκη",
+    exteriorSubtitle: "Mercedes-Benz Vito",
     interiorTitle: "Εσωτερικό",
     interiorSubtitle: "Ευρύχωρη και άνετη καμπίνα για κάθε διαδρομή",
     images: {
       exterior1Alt:
         "Mercedes-Benz Vito στο Αεροδρόμιο Θεσσαλονίκης, μπροστινή άποψη",
-      exterior2Alt:
-        "Mercedes-Benz Vito σε παραθαλάσσιο δρόμο κοντά στη Θεσσαλονίκη",
-      exterior3Alt: "Mercedes-Benz Vito κοντά στον Λευκό Πύργο, Θεσσαλονίκη",
-      exterior4Alt:
-        "Mercedes-Benz Vito στις αφίξεις Αεροδρομίου Θεσσαλονίκης τη νύχτα",
       interior1Alt: "Πίσω καμπίνα επιβατών Mercedes-Benz Vito",
       interior2Alt: "Ταμπλό και μπροστινή καμπίνα Mercedes-Benz Vito",
       interior3Alt: "Ευρύχωρο εσωτερικό και χώρος αποσκευών Mercedes-Benz Vito",
     },
-    exterior1Label: "Στο Αεροδρόμιο",
-    exterior2Label: "Παραθαλάσσιος Δρόμος",
-    exterior3Label: "Λευκός Πύργος",
-    exterior4Label: "Παραλαβή από Αεροδρόμιο",
+    exterior1Label: "Εξωτερικό",
     interior1Label: "Καμπίνα Επιβατών",
     interior2Label: "Ταμπλό",
     interior3Label: "Χώρος Αποσκευών",

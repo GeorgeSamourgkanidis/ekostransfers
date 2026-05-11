@@ -84,7 +84,7 @@ export default function ServicesContent() {
       <HeroSection
         title={t.servicesPage.heroTitle}
         subtitle={t.servicesPage.heroSubtitle}
-        imageSrc="/images/hero-services.png"
+        imageSrc="/images/hero-services.jpeg"
         imageAlt="Interior of a premium transfer vehicle"
         size="medium"
       />

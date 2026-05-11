@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { HeroSection } from "@/components/hero-section";
 import { useTranslations } from "@/components/language-provider";
 
@@ -13,7 +13,7 @@ export default function GalleryContent() {
 
   const EXTERIOR_IMAGES = [
     {
-      src: "/images/hero-home.png",
+      src: "/images/hero-home.jpeg",
       alt: t.galleryPage.images.exterior1Alt,
       label: t.galleryPage.exterior1Label,
     },
@@ -21,7 +21,7 @@ export default function GalleryContent() {
 
   const INTERIOR_IMAGES = [
     {
-      src: "/images/hero-services.png",
+      src: "/images/hero-services.jpeg",
       alt: t.galleryPage.images.interior1Alt,
       label: t.galleryPage.interior1Label,
     },
@@ -88,7 +88,7 @@ export default function GalleryContent() {
       <HeroSection
         title={t.galleryPage.heroTitle}
         subtitle={t.galleryPage.heroSubtitle}
-        imageSrc="/images/hero-home.png"
+        imageSrc="/images/hero-home.jpeg"
         imageAlt="Mercedes-Benz Vito"
         size="medium"
       />
@@ -214,6 +214,9 @@ export default function GalleryContent() {
           showCloseButton={false}
           onPointerDownOutside={(e) => e.preventDefault()}
         >
+          <DialogTitle className="sr-only">
+            {currentImage?.label || "Image lightbox"}
+          </DialogTitle>
           {currentImage && (
             <div className="relative flex h-[85vh] w-full items-center justify-center">
               <button

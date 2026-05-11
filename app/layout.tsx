@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ContactFAB } from "@/components/contact-fab";
@@ -30,6 +29,32 @@ export const metadata: Metadata = {
     "Halkidiki transfer",
     "Thessaloniki taxi service",
     "Greece airport transfer",
+    "Thessaloniki airport taxi",
+    "Macedonia Airport transfer",
+    "Thessaloniki transportation",
+    "private transfer Thessaloniki",
+    "airport shuttle Thessaloniki",
+    "Thessaloniki chauffeur",
+    "Thessaloniki driver",
+    "SKG transfer",
+    "Thessaloniki to Halkidiki",
+    "Thessaloniki airport pickup",
+    "airport drop off Thessaloniki",
+    "travel to Thessaloniki",
+    "Thessaloniki trip",
+    "Greece private driver",
+    "taxi from Thessaloniki airport",
+    "airport meet and greet",
+    "Thessaloniki port transfer",
+    "hotel transfer Thessaloniki",
+    "Thessaloniki city tours",
+    "transfer northern Greece",
+    "Thessaloniki to airport",
+    "book airport transfer",
+    "fixed price transfer Greece",
+    "Thessaloniki ride service",
+    "Greece transportation",
+    "comfortable airport transfer",
   ],
   openGraph: {
     title: "EKOS TRANSFERS - Airport Transfers in Thessaloniki",
@@ -39,14 +64,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: BUSINESS.name,
     url: SITE_URL,
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/logo.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: BUSINESS.name,
     description:
       "Professional private driver service. Safe, reliable, and comfortable rides at competitive prices.",
-    images: ["/og-image.png"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -129,7 +154,6 @@ export default function RootLayout({
           <Footer />
           <ContactFAB />
         </LanguageProvider>
-        <Analytics />
       </body>
     </html>
   );

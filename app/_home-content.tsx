@@ -108,7 +108,7 @@ export default function HomeContent() {
       <HeroSection
         title={t.home.heroTitle}
         subtitle={t.home.heroSubtitle}
-        imageSrc="/images/hero-home.png"
+        imageSrc="/images/hero-home.jpeg"
         imageAlt="Professional airport transfer vehicle at Thessaloniki Airport"
         size="large"
         centered

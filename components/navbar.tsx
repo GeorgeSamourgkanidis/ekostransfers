@@ -14,7 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CONTACT, BUSINESS } from "@/lib/pricing";
+import { CONTACT } from "@/lib/pricing";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useTranslations } from "@/components/language-provider";
 import {

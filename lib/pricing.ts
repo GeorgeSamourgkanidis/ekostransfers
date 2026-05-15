@@ -1,10 +1,3 @@
-export const PRICING = {
-  baseFare: 5, // EUR - base fare for any trip
-  perKmRate: 0.8, // EUR per kilometer
-  currency: "EUR",
-  minimumFare: 10, // EUR - minimum charge
-} as const;
-
 export const CONTACT = {
   phone: "+30 697 651 9137",
   whatsapp: "+306976519137", // no spaces for wa.me link
@@ -55,8 +48,3 @@ export const POPULAR_ROUTES = [
     duration: 70,
   },
 ] as const;
-
-export function calculateFare(distanceKm: number): number {
-  const fare = PRICING.baseFare + distanceKm * PRICING.perKmRate;
-  return Math.max(fare, PRICING.minimumFare);
-}

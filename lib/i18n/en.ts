@@ -16,7 +16,6 @@ export const en = {
   nav: {
     home: "Home",
     services: "Services",
-    fareCalculator: "Fare Calculator",
     contact: "Contact",
     gallery: "Gallery",
     toggleMenu: "Toggle menu",
@@ -284,52 +283,6 @@ export const en = {
     sendAnother: "Send Another Message",
   },
 
-  // Fare calculator page
-  fareCalculatorPage: {
-    heroTitle: "Fare Calculator",
-    heroSubtitle:
-      "Get an instant estimate for your transfer. Enter your pickup and drop-off locations to see the distance, duration, and fare.",
-
-    // Pricing info
-    pricingDetails: "Pricing Details",
-    baseFare: "Base fare",
-    ratePerKm: "Rate per km",
-    minimumFare: "Minimum fare",
-
-    // Disclaimer
-    disclaimer:
-      "Prices shown are estimates based on distance. Actual fare may vary slightly based on traffic conditions and specific pickup/drop-off points. Final price is confirmed upon booking.",
-
-    // Popular routes sidebar
-    popularRoutes: "Popular Routes",
-  },
-
-  // Fare calculator form
-  fareForm: {
-    title: "Calculate Your Fare",
-    description:
-      "Start typing and select your pickup and destination from the suggestions to get an instant price estimate.",
-    pickupLocation: "Pickup Location",
-    pickupPlaceholder: "e.g., Thessaloniki Airport",
-    destination: "Destination",
-    destinationPlaceholder: "e.g., Aristotelous Square, Thessaloniki",
-    calculateFare: "Calculate Fare",
-    calculating: "Calculating...",
-    selectSuggestion:
-      "Select a suggestion from the dropdown for accurate results",
-    clear: "Clear",
-    locationConfirmed: "Location confirmed",
-
-    // Results
-    yourFareEstimate: "Your Fare Estimate",
-    fromLabel: "From",
-    toLabel: "To",
-    fare: "Fare",
-    distance: "Distance",
-    totalEstimate: "Total estimate",
-    bookThisTrip: "Book This Trip via WhatsApp",
-  },
-
   // Gallery page
   galleryPage: {
     heroTitle: "Our Vehicle",
@@ -381,9 +334,6 @@ export const en = {
     contactTitle: "Contact",
     contactDescription:
       "Get in touch for airport transfers in Thessaloniki. Call, email, or WhatsApp us for instant booking.",
-    fareCalculatorTitle: "Fare Calculator",
-    fareCalculatorDescription:
-      "Calculate your transfer fare from Thessaloniki Airport to any destination. Transparent pricing with no hidden costs.",
     galleryTitle: "Gallery",
     galleryDescription:
       "See our Mercedes-Benz Vito transfer vehicle — exterior and interior photos of the car used for airport transfers in Thessaloniki.",

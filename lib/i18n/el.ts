@@ -18,7 +18,6 @@ export const el: Translations = {
   nav: {
     home: "Αρχική",
     services: "Υπηρεσίες",
-    fareCalculator: "Υπολογισμός Κόστους",
     contact: "Επικοινωνία",
     gallery: "Γκαλερί",
     toggleMenu: "Εναλλαγή μενού",
@@ -288,52 +287,6 @@ export const el: Translations = {
     sendAnother: "Στείλτε Άλλο Μήνυμα",
   },
 
-  // Fare calculator page
-  fareCalculatorPage: {
-    heroTitle: "Υπολογισμός Κόστους",
-    heroSubtitle:
-      "Λάβετε άμεση εκτίμηση για τη μεταφορά σας. Εισάγετε τις τοποθεσίες παραλαβής και αποβίβασης για να δείτε την απόσταση, τη διάρκεια και το κόστος.",
-
-    // Pricing info
-    pricingDetails: "Λεπτομέρειες Τιμολόγησης",
-    baseFare: "Βασικό κόστος",
-    ratePerKm: "Χρέωση ανά χλμ",
-    minimumFare: "Ελάχιστο κόστος",
-
-    // Disclaimer
-    disclaimer:
-      "Οι τιμές που εμφανίζονται είναι εκτιμήσεις βάσει απόστασης. Το πραγματικό κόστος μπορεί να διαφέρει ελαφρώς ανάλογα με τις συνθήκες κυκλοφορίας και τα συγκεκριμένα σημεία παραλαβής/αποβίβασης. Η τελική τιμή επιβεβαιώνεται κατά την κράτηση.",
-
-    // Popular routes sidebar
-    popularRoutes: "Δημοφιλείς Διαδρομές",
-  },
-
-  // Fare calculator form
-  fareForm: {
-    title: "Υπολογίστε το Κόστος σας",
-    description:
-      "Αρχίστε να πληκτρολογείτε και επιλέξτε την παραλαβή και τον προορισμό σας από τις προτάσεις για να λάβετε άμεση εκτίμηση τιμής.",
-    pickupLocation: "Τοποθεσία Παραλαβής",
-    pickupPlaceholder: "π.χ. Αεροδρόμιο Θεσσαλονίκης",
-    destination: "Προορισμός",
-    destinationPlaceholder: "π.χ. Πλατεία Αριστοτέλους, Θεσσαλονίκη",
-    calculateFare: "Υπολογισμός Κόστους",
-    calculating: "Υπολογίζεται...",
-    selectSuggestion:
-      "Επιλέξτε μια πρόταση από το μενού για ακριβή αποτελέσματα",
-    clear: "Καθαρισμός",
-    locationConfirmed: "Τοποθεσία επιβεβαιώθηκε",
-
-    // Results
-    yourFareEstimate: "Η Εκτίμηση Κόστους σας",
-    fromLabel: "Από",
-    toLabel: "Προς",
-    fare: "Κόστος",
-    distance: "Απόσταση",
-    totalEstimate: "Συνολική εκτίμηση",
-    bookThisTrip: "Κλείστε αυτό το Ταξίδι μέσω WhatsApp",
-  },
-
   // Gallery page
   galleryPage: {
     heroTitle: "Το Όχημά μας",
@@ -386,9 +339,6 @@ export const el: Translations = {
     contactTitle: "Επικοινωνία",
     contactDescription:
       "Επικοινωνήστε για μεταφορές αεροδρομίου στη Θεσσαλονίκη. Καλέστε, στείλτε email ή WhatsApp για άμεση κράτηση.",
-    fareCalculatorTitle: "Υπολογισμός Κόστους",
-    fareCalculatorDescription:
-      "Υπολογίστε το κόστος μεταφοράς σας από το Αεροδρόμιο Θεσσαλονίκης σε οποιονδήποτε προορισμό. Διαφανής τιμολόγηση χωρίς κρυφές χρεώσεις.",
     galleryTitle: "Γκαλερί",
     galleryDescription:
       "Δείτε το όχημα μεταφοράς μας Mercedes-Benz Vito — εξωτερικές και εσωτερικές φωτογραφίες του αυτοκινήτου που χρησιμοποιείται για μεταφορές από το αεροδρόμιο Θεσσαλονίκης.",

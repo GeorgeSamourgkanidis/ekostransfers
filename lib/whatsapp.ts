@@ -35,5 +35,5 @@ Please confirm availability. Thank you!`;
 }
 
 export function generateSimpleMessage(): string {
-  return `Hello! I'd like to book an airport transfer in Thessaloniki. Could you please help me?`;
+  return "";
 }

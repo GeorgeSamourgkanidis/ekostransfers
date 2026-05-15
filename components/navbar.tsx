@@ -32,6 +32,7 @@ export function Navbar() {
   const NAV_LINKS = [
     { href: "/", label: t.nav.home },
     { href: "/services", label: t.nav.services },
+    { href: "/pricing", label: t.nav.pricing },
     { href: "/gallery", label: t.nav.gallery },
     { href: "/contact", label: t.nav.contact },
   ];

@@ -18,6 +18,7 @@ export const el: Translations = {
   nav: {
     home: "Αρχική",
     services: "Υπηρεσίες",
+    pricing: "Τιμοκατάλογος",
     contact: "Επικοινωνία",
     gallery: "Γκαλερί",
     toggleMenu: "Εναλλαγή μενού",
@@ -285,6 +286,44 @@ export const el: Translations = {
     thankYou:
       "Ευχαριστούμε που επικοινωνήσατε. Θα σας απαντήσουμε μέσα σε λίγες ώρες. Για ταχύτερη απάντηση, επικοινωνήστε απευθείας μέσω WhatsApp.",
     sendAnother: "Στείλτε Άλλο Μήνυμα",
+  },
+
+  // Pricing page
+  pricingPage: {
+    heroTitle: "Τιμοκατάλογος Μεταφορών",
+    heroSubtitle:
+      "Σταθερές τιμές από το Αεροδρόμιο Θεσσαλονίκης (SKG) και το κέντρο της πόλης. Διαφανείς τιμές — χωρίς κρυφές χρεώσεις ή εκπλήξεις.",
+    kassandraTitle: "Χερσόνησος Κασσάνδρας",
+    sithoniaTitle: "Χερσόνησος Σιθωνίας",
+    otherTitle: "Άλλοι Προορισμοί",
+    destinationHeader: "Προορισμός",
+    fromAirportHeader: "Από Αεροδρόμιο",
+    fromCenterHeader: "Από Κέντρο",
+    ctaSubtitle:
+      "Έτοιμοι να κλείσετε; Επικοινωνήστε μαζί μας μέσω WhatsApp, Viber, τηλεφώνου ή email για άμεση επιβεβαίωση.",
+    destinations: {
+      neaKallikrateia: "Νέα Καλλικράτεια",
+      neaMoudania: "Νέα Μουδανιά",
+      neaPotidaia: "Νέα Ποτίδαια",
+      fokaia: "Φώκαια",
+      sani: "Σάνη",
+      afytos: "Άφυτο",
+      siviri: "Σίβηρη",
+      kallithea: "Καλλιθέα",
+      kryopigi: "Κρυοπηγή",
+      polychrono: "Πολύχρονο",
+      chaniotis: "Χανιώτη",
+      peukochori: "Πευκοχώρι",
+      paliouri: "Παλιούρι",
+      gerakini: "Γερακινή",
+      psakoudia: "Ψακούδια",
+      nikiti: "Νικήτη",
+      vourvourou: "Βουρβουρού",
+      neosMarmaras: "Νέος Μαρμαράς",
+      sarti: "Σάρτη",
+      ierissos: "Ιερισσός",
+      ouranoupoli: "Ουρανούπολη",
+    },
   },
 
   // Gallery page

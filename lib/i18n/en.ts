@@ -16,6 +16,7 @@ export const en = {
   nav: {
     home: "Home",
     services: "Services",
+    pricing: "Pricing",
     contact: "Contact",
     gallery: "Gallery",
     toggleMenu: "Toggle menu",
@@ -281,6 +282,44 @@ export const en = {
     thankYou:
       "Thank you for reaching out. We will get back to you within a few hours. For faster response, reach us directly via WhatsApp.",
     sendAnother: "Send Another Message",
+  },
+
+  // Pricing page
+  pricingPage: {
+    heroTitle: "Transfer Prices",
+    heroSubtitle:
+      "Fixed prices from Thessaloniki Airport (SKG) and city center. Transparent pricing — no hidden fees or meter surprises.",
+    kassandraTitle: "Kassandra Peninsula",
+    sithoniaTitle: "Sithonia Peninsula",
+    otherTitle: "Other Destinations",
+    destinationHeader: "Destination",
+    fromAirportHeader: "From Airport",
+    fromCenterHeader: "From City Center",
+    ctaSubtitle:
+      "Ready to book? Contact us via WhatsApp, Viber, phone, or email for instant confirmation.",
+    destinations: {
+      neaKallikrateia: "New Kallikrateia",
+      neaMoudania: "New Moudania",
+      neaPotidaia: "New Potidaia",
+      fokaia: "Fokaia",
+      sani: "Sani",
+      afytos: "Afytos",
+      siviri: "Siviri",
+      kallithea: "Kallithea",
+      kryopigi: "Kryopigi",
+      polychrono: "Polychrono",
+      chaniotis: "Chaniotis",
+      peukochori: "Pefkochori",
+      paliouri: "Paliouri",
+      gerakini: "Gerakini",
+      psakoudia: "Psakoudia",
+      nikiti: "Nikiti",
+      vourvourou: "Vourvourou",
+      neosMarmaras: "Neos Marmaras",
+      sarti: "Sarti",
+      ierissos: "Ierissos",
+      ouranoupoli: "Ouranoupoli",
+    },
   },
 
   // Gallery page

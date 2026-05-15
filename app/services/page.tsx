@@ -11,6 +11,94 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://ekostransfers.com";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "Service",
+      position: 1,
+      name: "Airport Pickup",
+      description:
+        "Meet & greet at Thessaloniki Airport arrivals with a name sign. Real-time flight tracking, luggage assistance, and comfortable transfer to your destination.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Thessaloniki, Greece",
+      serviceType: "Airport Transfer",
+    },
+    {
+      "@type": "Service",
+      position: 2,
+      name: "Airport Drop-off",
+      description:
+        "Timely pickup from your hotel or any address in Thessaloniki to the airport. Luggage assistance and fixed pricing.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Thessaloniki, Greece",
+      serviceType: "Airport Transfer",
+    },
+    {
+      "@type": "Service",
+      position: 3,
+      name: "City Tours & Sightseeing",
+      description:
+        "Private tours of Thessaloniki covering the White Tower, Ano Poli, Roman and Byzantine monuments, and local food markets at your own pace.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Thessaloniki, Greece",
+      serviceType: "Tour",
+    },
+    {
+      "@type": "Service",
+      position: 4,
+      name: "Halkidiki Transfers",
+      description:
+        "Direct private transfers from Thessaloniki Airport or city center to any destination in Halkidiki. Fixed competitive pricing.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Halkidiki, Greece",
+      serviceType: "Transfer",
+    },
+    {
+      "@type": "Service",
+      position: 5,
+      name: "Long Distance Transfers",
+      description:
+        "Private transfers to Kavala, Katerini, Edessa, Meteora, and other destinations across northern Greece.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Northern Greece",
+      serviceType: "Transfer",
+    },
+    {
+      "@type": "Service",
+      position: 6,
+      name: "Hotel & Event Transfers",
+      description:
+        "Reliable transfers between hotels, conference venues, and event locations in the Thessaloniki area.",
+      provider: { "@type": "LocalBusiness", name: "EKOS TRANSFERS" },
+      areaServed: "Thessaloniki, Greece",
+      serviceType: "Transfer",
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: `${SITE_URL}/services`,
+    },
+  ],
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -164,6 +252,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaEl) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ServicesContent />
     </>

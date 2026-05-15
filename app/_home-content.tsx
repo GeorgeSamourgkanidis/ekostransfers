@@ -13,6 +13,7 @@ import {
   Languages,
   CreditCard,
   Hotel,
+  Euro,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -101,6 +102,14 @@ export default function HomeContent() {
       description: t.home.features.comfortable.description,
     },
   ];
+
+  const ROUTE_LINKS: Record<string, string> = {
+    "City Center": "/routes/skg-to-city-center",
+    "Halkidiki (Kassandra)": "/routes/skg-to-halkidiki",
+    "Halkidiki (Sithonia)": "/routes/skg-to-halkidiki",
+    "Perea / Agia Triada": "/routes/skg-to-perea",
+    Katerini: "/routes/skg-to-katerini",
+  };
 
   return (
     <>
@@ -249,12 +258,17 @@ export default function HomeContent() {
                       className="border-b last:border-0 transition-colors hover:bg-muted/30"
                     >
                       <td className="px-6 py-4">
-                        <div className="text-sm font-medium text-foreground">
-                          {route.to}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {t.common.from} {route.from}
-                        </div>
+                        <Link
+                          href={ROUTE_LINKS[route.to] || "#"}
+                          className="block"
+                        >
+                          <div className="text-sm font-medium text-foreground underline-offset-2 hover:underline">
+                            {route.to}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {t.common.from} {route.from}
+                          </div>
+                        </Link>
                       </td>
                       <td className="px-6 py-4 text-sm text-muted-foreground">
                         {route.distance} {t.common.km}
@@ -267,6 +281,15 @@ export default function HomeContent() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/pricing">
+                <Euro className="size-4" />
+                View Transfer Prices
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

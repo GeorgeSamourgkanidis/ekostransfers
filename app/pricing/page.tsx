@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { en } from "@/lib/i18n";
-import GalleryContent from "./_content";
+import PricingContent from "./_content";
 
 const SITE_URL = "https://ekostransfers.com";
 
 export const metadata: Metadata = {
-  title: en.meta.galleryTitle,
-  description: en.meta.galleryDescription,
+  title: "Transfer Prices",
+  description:
+    "Fixed prices for private transfers. Transparent pricing — no hidden fees or meter surprises. Book your ride with EKOS TRANSFERS.",
   openGraph: {
-    title: `${en.meta.galleryTitle} | EKOS TRANSFERS`,
-    description: en.meta.galleryDescription,
+    title: "Transfer Prices | EKOS TRANSFERS",
+    description:
+      "Fixed prices for private transfers from Thessaloniki Airport (SKG) and city center to all Halkidiki destinations.",
   },
 };
 
@@ -21,20 +22,20 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Gallery",
-      item: `${SITE_URL}/gallery`,
+      name: "Transfer Prices",
+      item: `${SITE_URL}/pricing`,
     },
   ],
 };
 
-export default function Page() {
+export default function PricingPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <GalleryContent />
+      <PricingContent />
     </>
   );
 }

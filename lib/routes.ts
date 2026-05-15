@@ -126,4 +126,18 @@ export const ROUTES: Route[] = [
       "Thessaloniki ferry transfer",
     ],
   },
+  {
+    slug: "halkidiki-transfer-prices",
+    title: "Halkidiki Transfer Prices — SKG Airport to Kassandra & Sithonia",
+    description:
+      "Fixed prices for private transfers from Thessaloniki Airport (SKG) to all Halkidiki destinations. Kassandra from 70€, Sithonia from 110€. No hidden fees.",
+    keywords: [
+      "Halkidiki transfer prices",
+      "SKG to Halkidiki cost",
+      "Thessaloniki airport to Kassandra price",
+      "Halkidiki taxi rates",
+      "Kassandra transfer cost",
+      "Sithonia transfer price",
+    ],
+  },
 ];

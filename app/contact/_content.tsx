@@ -1,6 +1,8 @@
 "use client";
 
-import { Phone, Mail, MessageCircle, Clock } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, MessageCircle, Clock, Car } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroSection } from "@/components/hero-section";
 import { CONTACT } from "@/lib/pricing";
@@ -10,6 +12,7 @@ import {
   generateSimpleMessage,
 } from "@/lib/whatsapp";
 import { useTranslations } from "@/components/language-provider";
+import { FaqSection } from "@/components/faq-section";
 
 export default function ContactContent() {
   const t = useTranslations();
@@ -142,6 +145,31 @@ export default function ContactContent() {
           </div>
         </div>
       </section>
+
+      {/* CTA to Services */}
+      <section className="bg-primary py-12 lg:py-16">
+        <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
+          <h2 className="font-serif text-3xl font-bold text-primary-foreground md:text-4xl text-balance">
+            {t.contactPage.servicesCtaTitle}
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
+            {t.contactPage.servicesCtaSubtitle}
+          </p>
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90"
+            >
+              <Link href="/services">
+                <Car className="size-4" />
+                {t.common.exploreServices}
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+      <FaqSection title={t.contactPage.faqTitle} items={t.contactPage.faq} />
     </>
   );
 }

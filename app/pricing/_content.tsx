@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
 import { PRICE_SECTIONS } from "@/lib/pricing-data";
 import { useTranslations } from "@/components/language-provider";
+import { FaqSection } from "@/components/faq-section";
 
 export default function PricingContent() {
   const t = useTranslations();
@@ -78,6 +79,7 @@ export default function PricingContent() {
           </p>
         </div>
       </section>
+      <FaqSection title={t.pricingPage.faqTitle} items={t.pricingPage.faq} />
     </>
   );
 }

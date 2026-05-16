@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Plane,
   Car,
@@ -8,7 +9,9 @@ import {
   CheckCircle2,
   Building,
   Palmtree,
+  Euro,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroSection } from "@/components/hero-section";
 import { useTranslations } from "@/components/language-provider";
@@ -159,6 +162,26 @@ export default function ServicesContent() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA to Pricing */}
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
+          <h2 className="font-serif text-3xl font-bold md:text-4xl text-balance">
+            {t.servicesPage.pricingCtaTitle}
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            {t.servicesPage.pricingCtaSubtitle}
+          </p>
+          <div className="mt-8">
+            <Button asChild size="lg">
+              <Link href="/pricing">
+                <Euro className="size-4" />
+                {t.common.viewPrices}
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

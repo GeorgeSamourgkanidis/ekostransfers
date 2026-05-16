@@ -8,8 +8,14 @@ import { LanguageProvider } from "@/components/language-provider";
 import { BUSINESS, CONTACT } from "@/lib/pricing";
 import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _playfair = Playfair_Display({ subsets: ["latin", "greek"] });
+const _geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+const _playfair = Playfair_Display({
+  subsets: ["latin", "greek"],
+  variable: "--font-playfair",
+});
 
 const SITE_URL = "https://ekostransfers.com";
 
@@ -142,7 +148,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${_geist.variable} ${_playfair.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <script
           type="application/ld+json"

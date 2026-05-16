@@ -10,6 +10,8 @@ export const en = {
     km: "km",
     min: "min",
     currency: "EUR",
+    viewPrices: "View Prices",
+    exploreServices: "Explore Services",
   },
 
   // Navigation
@@ -140,6 +142,33 @@ export const en = {
     ctaTitle: "Ready to Book Your Transfer?",
     ctaSubtitle:
       "Get in touch for confirmation. Available 24/7 for airport pickups and drop-offs.",
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      {
+        q: "How do I book a transfer with EKOS TRANSFERS?",
+        a: "You can book via WhatsApp, Viber, phone, or email. We respond within minutes and confirm your trip — no app needed.",
+      },
+      {
+        q: "How much does a transfer from Thessaloniki Airport cost?",
+        a: "Transfers from Thessaloniki Airport (SKG) are charged based on distance with a fixed price quoted upfront. For specific destination prices, check our pricing page.",
+      },
+      {
+        q: "What vehicle do you use for transfers?",
+        a: "We use a Mercedes-Benz Vito — a spacious, air-conditioned van that comfortably accommodates up to 7 passengers with plenty of luggage space.",
+      },
+      {
+        q: "How do you handle delays and flight tracking?",
+        a: "We track your flight in real-time and adjust the pickup time automatically. There is no extra charge for flight delays — we wait for you.",
+      },
+      {
+        q: "Is the price fixed or metered?",
+        a: "All our prices are fixed and quoted upfront. You know your fare before you book — no meter, no traffic surcharges, no hidden costs.",
+      },
+      {
+        q: "What areas do you serve?",
+        a: "We cover Thessaloniki Airport (SKG), the city center, Halkidiki (Kassandra and Sithonia), Katerini, Kavala, Edessa, Meteora, and all of northern Greece.",
+      },
+    ],
   },
 
   // Services page
@@ -236,7 +265,7 @@ export const en = {
       step2: {
         title: "Confirm Booking",
         description:
-          "We reply with the price and availability. Confirm your booking with just a message -- no deposits or apps needed.",
+          "Confirm your booking with just a message -- no app required.",
       },
       step3: {
         title: "Enjoy the Ride",
@@ -244,6 +273,9 @@ export const en = {
           "We pick you up on time, help with your luggage, and drive you safely to your destination.",
       },
     },
+    pricingCtaTitle: "Check Our Transfer Prices",
+    pricingCtaSubtitle:
+      "Transparent fixed pricing from Thessaloniki Airport and city center to all destinations in Halkidiki and northern Greece.",
   },
 
   // Contact page
@@ -262,6 +294,28 @@ export const en = {
     transfers: "Transfers",
     response: "Response",
     lessThan30Min: "< 30 min",
+    servicesCtaTitle: "Not Sure What You Need?",
+    servicesCtaSubtitle:
+      "Explore our full range of transfer services — from airport pickups to Halkidiki transfers and city tours.",
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      {
+        q: "How quickly will you respond to my message?",
+        a: "We typically respond within a few minutes. For the fastest response, contact us via WhatsApp or Viber.",
+      },
+      {
+        q: "How do I confirm my booking?",
+        a: "Your booking is confirmed with just a message. Payment is upon arrival.",
+      },
+      {
+        q: "Can I book a transfer for someone else?",
+        a: "Yes, just provide us with their flight details, name, and destination. We will meet them at arrivals with their name sign.",
+      },
+      {
+        q: "What if I need to cancel or change my booking?",
+        a: "Cancellations and changes are easy — just contact us via WhatsApp, Viber, phone, or email and we will handle it immediately.",
+      },
+    ],
   },
 
   // Contact form
@@ -320,6 +374,29 @@ export const en = {
       ierissos: "Ierissos",
       ouranoupoli: "Ouranoupoli",
     },
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      {
+        q: "Are the prices per person or per vehicle?",
+        a: "All prices are per vehicle, not per person. Whether you are traveling alone or with a group, the price stays the same.",
+      },
+      {
+        q: "What is included in the price?",
+        a: "The price includes all taxes, tolls, fuel, flight tracking, and meet & greet at the airport. No hidden fees or surcharges.",
+      },
+      {
+        q: "Do you charge extra for luggage?",
+        a: "No, luggage is included at no extra cost. Our Mercedes Vito has ample space for suitcases, bags, and beach gear.",
+      },
+      {
+        q: "Do you offer round-trip transfers?",
+        a: "Yes, round-trip transfers are available. You can see the round-trip price listed next to each destination on this page.",
+      },
+      {
+        q: "Can I pay in cash?",
+        a: "Yes, cash payment is accepted. We also accept bank transfer upon request.",
+      },
+    ],
   },
 
   // Gallery page
@@ -360,6 +437,25 @@ export const en = {
       localFoodMarketAlt: "Traditional Greek products at a local food market",
       localFoodMarketLabel: "Local Food Market",
     },
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      {
+        q: "How many passengers can the Mercedes Vito carry?",
+        a: "The Mercedes-Benz Vito comfortably seats up to 7 passengers with plenty of room for everyone.",
+      },
+      {
+        q: "Is there enough space for luggage?",
+        a: "Yes, the Vito has a spacious luggage area that can accommodate multiple suitcases, bags, strollers, and beach equipment.",
+      },
+      {
+        q: "Is the vehicle air-conditioned?",
+        a: "Yes, the vehicle has full climate control to keep you comfortable year-round, whether it is hot summer or cold winter.",
+      },
+      {
+        q: "Is the vehicle cleaned regularly?",
+        a: "Absolutely. The vehicle is thoroughly cleaned and sanitized before every trip to ensure a spotless experience.",
+      },
+    ],
   },
 
   // Metadata

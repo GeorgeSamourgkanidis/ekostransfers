@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { HeroSection } from "@/components/hero-section";
 import { useTranslations } from "@/components/language-provider";
+import { FaqSection } from "@/components/faq-section";
+
+const LightboxDialog = dynamic(() => import("./lightbox-dialog"), {
+  ssr: false,
+});
 
 export default function GalleryContent() {
   const t = useTranslations();
@@ -205,66 +209,15 @@ export default function GalleryContent() {
       </section>
 
       {/* Lightbox Dialog */}
-      <Dialog
-        open={lightboxIndex !== null}
-        onOpenChange={() => setLightboxIndex(null)}
-      >
-        <DialogContent
-          className="max-w-[95vw] border-0 bg-black/95 p-0 gap-0"
-          showCloseButton={false}
-          onPointerDownOutside={(e) => e.preventDefault()}
-        >
-          <DialogTitle className="sr-only">
-            {currentImage?.label || "Image lightbox"}
-          </DialogTitle>
-          {currentImage && (
-            <div className="relative flex h-[85vh] w-full items-center justify-center">
-              <button
-                onClick={() => setLightboxIndex(null)}
-                className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition hover:bg-white/20"
-                aria-label="Close"
-              >
-                <X className="size-5" />
-              </button>
-
-              <div className="absolute top-4 left-4 z-10 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white backdrop-blur-sm">
-                {lightboxIndex! + 1} / {ALL_IMAGES.length}
-              </div>
-
-              <button
-                onClick={handlePrev}
-                className="absolute left-4 z-10 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition hover:bg-white/20"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="size-6" />
-              </button>
-
-              <div className="relative h-full w-full">
-                <Image
-                  src={currentImage.src}
-                  alt={currentImage.alt}
-                  fill
-                  sizes="95vw"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-
-              <button
-                onClick={handleNext}
-                className="absolute right-4 z-10 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition hover:bg-white/20"
-                aria-label="Next image"
-              >
-                <ChevronRight className="size-6" />
-              </button>
-
-              <div className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm">
-                {currentImage.label}
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      <LightboxDialog
+        lightboxIndex={lightboxIndex}
+        currentImage={currentImage}
+        totalImages={ALL_IMAGES.length}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        onClose={() => setLightboxIndex(null)}
+      />
+      <FaqSection title={t.galleryPage.faqTitle} items={t.galleryPage.faq} />
     </>
   );
 }

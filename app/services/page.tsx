@@ -2,16 +2,40 @@ import type { Metadata } from "next";
 import { en } from "@/lib/i18n";
 import ServicesContent from "./_content";
 
+const SITE_URL = "https://ekostransfers.com";
+
 export const metadata: Metadata = {
   title: en.meta.servicesTitle,
   description: en.meta.servicesDescription,
+  keywords: [
+    "airport transfer Thessaloniki",
+    "Thessaloniki airport pickup",
+    "VIP transfer Thessaloniki",
+    "luxury airport transfer Greece",
+    "Mercedes van transfer",
+    "Halkidiki transfer service",
+    "Thessaloniki city tour",
+    "private airport transfer Greece",
+    "hotel transfer Thessaloniki",
+    "airport meet and greet",
+    "long distance transfer Greece",
+    "premium chauffeur Thessaloniki",
+    "executive airport taxi",
+    "spacious van transfer",
+    "VIP driver Greece",
+  ],
   openGraph: {
     title: `${en.meta.servicesTitle} | EKOS TRANSFERS`,
     description: en.meta.servicesDescription,
+    url: `${SITE_URL}/services`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${en.meta.servicesTitle} | EKOS TRANSFERS`,
+    description: en.meta.servicesDescription,
+    images: ["/logo.png"],
   },
 };
-
-const SITE_URL = "https://ekostransfers.com";
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -108,7 +132,7 @@ const faqSchema = {
       name: "How much does a transfer from Thessaloniki Airport to the city center cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A transfer from Thessaloniki Airport (SKG) to the city center starts from approximately €18, with a fixed price based on distance — no hidden fees or meter surprises.",
+        text: "Transfers from Thessaloniki Airport (SKG) are charged based on distance — no hidden fees or meter surprises. Check our pricing page for specific destination rates.",
       },
     },
     {
@@ -132,7 +156,7 @@ const faqSchema = {
       name: "Are your transfer prices fixed or metered?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "All our prices are fixed and quoted upfront. You know your fare before you book — no meter, no traffic surcharges, no hidden costs.",
+        text: "All our prices are fixed and quoted upfront. You know your fare before you book — no meter, no traffic surcharges.",
       },
     },
     {
@@ -156,7 +180,7 @@ const faqSchema = {
       name: "How do I book a transfer in Thessaloniki?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can book via WhatsApp, Viber, phone call, or email. We respond within minutes and confirm your trip with a fixed price — no app or deposit needed.",
+        text: "You can book via WhatsApp, Viber, phone call, or email. We respond within minutes and confirm your trip — no app needed.",
       },
     },
     {
@@ -180,7 +204,7 @@ const faqSchemaEl = {
       name: "Πόσο κοστίζει μια μεταφορά από το Αεροδρόμιο Θεσσαλονίκης προς το κέντρο της πόλης;",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Η μεταφορά από το Αεροδρόμιο Θεσσαλονίκης (SKG) προς το κέντρο της πόλης ξεκινά από περίπου €18, με σταθερή τιμή βάσει απόστασης — χωρίς κρυφές χρεώσεις ή εκπλήξεις.",
+        text: "Οι μεταφορές από το Αεροδρόμιο Θεσσαλονίκης (SKG) χρεώνονται βάσει απόστασης — χωρίς κρυφές χρεώσεις ή εκπλήξεις. Δείτε τη σελίδα τιμοκαταλόγου για συγκεκριμένες τιμές.",
       },
     },
     {

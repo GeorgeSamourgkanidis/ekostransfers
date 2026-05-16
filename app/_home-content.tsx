@@ -20,6 +20,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { HeroSection } from "@/components/hero-section";
 import { POPULAR_ROUTES } from "@/lib/pricing";
 import { useTranslations } from "@/components/language-provider";
+import { FaqSection } from "@/components/faq-section";
 
 export default function HomeContent() {
   const t = useTranslations();
@@ -293,6 +294,8 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      <FaqSection title={t.home.faqTitle} items={t.home.faq} />
     </>
   );
 }

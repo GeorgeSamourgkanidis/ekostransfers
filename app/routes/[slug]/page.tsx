@@ -23,6 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${route.title} | EKOS TRANSFERS`,
       description: route.description,
+      url: `https://ekostransfers.com/routes/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${route.title} | EKOS TRANSFERS`,
+      description: route.description,
+      images: ["/logo.png"],
     },
   };
 }
